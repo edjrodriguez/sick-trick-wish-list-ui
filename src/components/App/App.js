@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Form from '../Form/Form';
 import Tricks from '../Tricks/Tricks';
+import { fetchData } from '../../apiCalls';
 import './App.css';
 
 class App extends Component {
@@ -8,33 +9,18 @@ class App extends Component {
     super()
     this.state = {
       tricks: [
-        {
-        stance: "regular",
-        name: "treflip",
-        obstacle: "flat ground",
-        tutorial: "https://www.youtube.com/watch?v=XGw3YkQmNig",
-        id: 1
-        },
-        {
-        stance: "switch",
-        name: "heelflip",
-        obstacle: "stairs",
-        tutorial: "https://www.youtube.com/watch?v=9N9swrZU1HA",
-        id: 2
-        },
-        {
-        stance: "regular",
-        name: "frontside 50-50, backside 180 out",
-        obstacle: "ledge",
-        tutorial: "https://www.youtube.com/watch?v=9N9swrZU1HA",
-        id: 3
-        }
+     
         ]
     }
   }
 
   componentDidMount() {
-    console.log("mounted")
+    fetchData()
+      .then((response) => {
+        this.setState({
+          tricks: response
+        })
+      })
 
   }
 

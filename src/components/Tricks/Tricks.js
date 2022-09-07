@@ -2,10 +2,8 @@ import React from "react"
 import Card from "../Card/Card"
 
 const Tricks  = ({tricks}) => {
-
-    
     const trickCard = tricks.map(trick =>{
-        console.log(trick)
+  
         return(
             <Card 
                 key={trick.id}
