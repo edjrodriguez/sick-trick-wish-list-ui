@@ -8,5 +8,4 @@ let fetchData = () =>
             }
         })
     
-
 export {fetchData}

@@ -8,11 +8,19 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      tricks: [
-     
-        ]
+      tricks: []
     }
   }
+
+  addTrick = (newTrick) => {
+    this.setState({
+      tricks: [
+        ...this.state.tricks,
+        newTrick
+      ]
+    })
+  }
+
 
   componentDidMount() {
     fetchData()
@@ -29,7 +37,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form 
+          addTrick={this.addTrick}
+        />
         <Tricks 
           tricks={this.state.tricks}
         />

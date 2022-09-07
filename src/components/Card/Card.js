@@ -7,7 +7,6 @@ const Card  = ({id, stance, name, obstacle, tutorial}) => {
         borderRadius: "15px",
         textAlign: "center",
     }
-
     return (
         <div style={card}className="card">
             <h3>{stance} {name}</h3>
