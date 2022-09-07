@@ -37,7 +37,6 @@ class Form extends Component {
         this.setState({
             [name]: value
         })
-
     }
 
     render() {
@@ -70,7 +69,7 @@ class Form extends Component {
                     value={this.state.link}
                     onChange={this.handleChange}
                 />
-                <button onClick={(event) => this.onSubmit(event)}>SEND IT</button>  
+                <button name="submit" onClick={(event) => this.onSubmit(event)}>SEND IT</button>  
             </form>
         )
     }

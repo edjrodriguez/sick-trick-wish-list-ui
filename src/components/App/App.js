@@ -21,7 +21,6 @@ class App extends Component {
     })
   }
 
-
   componentDidMount() {
     fetchData()
       .then((response) => {
@@ -32,10 +31,9 @@ class App extends Component {
 
   }
 
-
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <h1>Sick Trick Wish List</h1>
         <Form 
           addTrick={this.addTrick}
@@ -43,9 +41,7 @@ class App extends Component {
         <Tricks 
           tricks={this.state.tricks}
         />
-
-
-      </div>
+      </main>
     );
   }
 }
